@@ -9,7 +9,7 @@ async function connectDatabase() {
       host: 'localhost',
       user: 'root',
       password: 'root',
-      database: 'superadmin_db',
+      database: 'super_db',
     });
 
     console.log('Database connected successfully');

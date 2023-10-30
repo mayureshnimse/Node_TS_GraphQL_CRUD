@@ -4,12 +4,12 @@
 //import { ApolloServer } from 'apollo-server';
 
 import { ApolloServer } from '@apollo/server';
-import resolvers from './resolvers';
+import resolvers from './graphql/resolvers';
 import { readFileSync } from 'fs';
 import path from 'path';
 import { startStandaloneServer } from '@apollo/server/standalone';
-
-const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf-8');
+import typeDefs from './graphql/typeDefs';
+//const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf-8');
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
@@ -30,3 +30,4 @@ startStandaloneServer(server, {
 }).then(({ url }) => {
   console.log(`Server ready at ${url}`);
 });;
+///-----
